@@ -1,0 +1,281 @@
+@import "normalize";
+@import "utilities";
+@import "mixins";
+@import "vars";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+// < Header >
+.header {
+  padding: 28px 0 60px 0;
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_left,
+    &_right {
+      display: flex;
+      align-items: center;
+    }
+    &_left {
+      &_logo {
+        padding-right: 1rem;
+      }
+      &_content {
+        &_title {
+          text-transform: uppercase;
+          @include MontserratBold(20px, 22px);
+        }
+        &_text {
+          @include MontserratLight(10px, 22px);
+        }
+      }
+    }
+    &_right {
+      &_phone {
+        text-align: right;
+        margin-right: 30px;
+        &_number {
+          @include MontserratBold(18px, 22px);
+        }
+        &_subtitle {
+          @include MontserratLight(11px, 22px);
+        }
+      }
+      &_callback {
+        border: 2px solid $dark-color;
+        padding: 12px;
+        &:hover {
+          background-color: $grey-light-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+// < Header />
+
+// < Showcase >
+.showcase {
+  position: relative;
+  background-image: url("../images/showcase.png");
+  background-repeat: no-repeat;
+
+  z-index: 11;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 1, 1, 0.39);
+    z-index: 1;
+  }
+  &_inner {
+    position: relative;
+    z-index: 22;
+    &_nav {
+      background-color: $yellow-color;
+      margin-bottom: 120px;
+      transform: translateY(-50%);
+      &_menu {
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: space-between;
+        &_item {
+          @include MontserratMedium(14px, 22px);
+          flex: 1;
+          text-align: center;
+        }
+      }
+    }
+    &_content {
+      color: $white-color;
+      &_title {
+        @include MontserratBold(36px, 46.2px);
+      }
+      &_text {
+        @include MontserratLight(14px, 22px);
+        padding: 30px 0 50px 0;
+        max-width: 45%;
+      }
+      &_links {
+        padding-bottom: 140px;
+        @include MontserratLight(12px, 22px);
+        &_btn {
+          a {
+            margin-right: 30px;
+          }
+        }
+        &_underline {
+          padding-left: 30px;
+          text-decoration: underline;
+          color: $white-color;
+          @include MontserratMedium(12px, 22px);
+        }
+      }
+    }
+  }
+}
+// < Showcase />
+
+// < Always >
+.always {
+  padding-bottom: 80px;
+  &_inner {
+    text-align: center;
+    &_title {
+    }
+    &_products {
+      &_item {
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+        &_img {
+          img {
+            max-width: 240px;
+            max-height: 117px;
+          }
+        }
+      }
+    }
+  }
+
+}
+// < Always />
+
+// < Advantages >
+.advantages {
+  background-color: $grey-light-color;
+  text-align: center;
+  &_inner {
+    padding-bottom: 60px;
+    &_title {
+
+    }
+    &_items {
+      &_item {
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}
+// < Advantages />
+
+// < Popular >
+.popular {
+  text-align: center;
+  &_inner {
+    &_title {
+    }
+    &_products {
+      &_product {
+        margin-left: 10px;
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+// < Popular />
+
+
+// < Service >
+.service {
+  background-color: $grey-light-color;
+  text-align: center;
+  padding-bottom: 60px;
+  &_inner {
+    &_services {
+      &_item {
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+        &_img {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+// < Service />
+
+// < Contacts >
+.contacts {
+  background-image: url("../images/map.png");
+  &_inner {
+    display: flex;
+    justify-content: flex-end;
+    &_content {
+      background-color: $white-color;
+      margin: 80px 0;
+      padding: 40px;
+      max-width: 380px;
+      &_title {
+        @include MontserratBold(20px,24px);
+      }
+      &_item {
+        display: flex;
+        padding: 1rem 0;
+        align-items: center;
+        &_ico {
+          margin-right: 20px;
+        }
+        &_value {
+          @include MontserratMedium(14px,30px);
+          .email {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+// < Contacts />
+
+// < Footer >
+.footer {
+  background-color: $dark-color;
+  .footer_inner {
+    padding-top: 50px;
+    color: $white-color;
+    &_line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 50px;
+      @include MontserratRegular(12px,22px);
+
+      &_left {
+        display: flex;
+        align-items: center;
+
+        &_ico {
+          padding-right: 1rem;
+        }
+        &_text {
+          &_top {
+            @include MontserratBold(19px,21px);
+          }
+          &_bottom {
+            @include MontserratLight(10.5px,21px);
+          }
+        }
+      }
+      &_right {
+        text-align: right;
+      }
+    }
+  }
+}
+// < Footer />

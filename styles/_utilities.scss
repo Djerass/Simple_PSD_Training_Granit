@@ -1,0 +1,108 @@
+@import "vars";
+@import 'mixins';
+.container {
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+
+.title {
+  padding: 70px 0 60px 0;
+  @include MontserratBold(20px,24px);
+}
+
+.btn {
+  display: inline-block;
+  background-color: $yellow-color;
+  padding: 1rem 2rem;
+  color: $dark-color;
+  @include MontserratMedium(12px,22px);
+  cursor: pointer;
+  &:hover {
+    background-color: $yellow--dark-color;
+  }
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex:1;
+    border: 2px solid #F6F6F6;
+    padding: 2rem;
+    &_img {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      &_promo {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color:$white-color;
+        background-color: $red-color;
+        padding: 5px 10px;
+        @include MontserratMedium(10px,12px);
+      }
+    }
+    &_title {
+      @include MontserratMedium(15px,18px);
+      text-decoration: underline;
+      padding: 1rem 0;
+    }
+    &_info {
+      @include MontserratLight(13px,15.6px);
+      padding-bottom: 1rem;
+    }
+    &_price {
+      @include MontserratMedium(1rem,19.2px);
+      padding-bottom: 1rem;
+      &_promo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_before {
+          color: $grey-medium-color;
+          @include MontserratRegular(10px,12px);
+          text-decoration: line-through;
+          padding-right: 22px;
+        }
+        &_after {
+          color: $red-color;
+          @include MontserratMedium(16px,19.2px);
+        }
+      }
+    }
+  }
+}
+
+.advantages {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  &_item {
+    border: 2px solid $white-color;
+    padding: 1rem;
+    flex: 1;
+    &:hover {
+      background-color: $white-color;
+    }
+    &_title {
+      text-decoration: underline;
+      @include MontserratMedium(15px,18px);
+    }
+    &_subtitle {
+      padding: 1rem 0;
+      @include MontserratMedium(15px,18px);
+    }
+    &_info {
+      @include MontserratLight(12px,18px);
+    }
+  }
+}

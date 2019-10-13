@@ -1,0 +1,11 @@
+{
+  "name": "granit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.6.4",
+    "postcss-modules": "^1.4.1",
+    "sass": "^1.23.0"
+  }
+}
